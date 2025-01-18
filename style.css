@@ -119,7 +119,7 @@ footer {
     border-radius: 50%;
     margin-left: 20px;
     object-fit: cover;
-    border: 4px solid #007BFF;
+    border: 4px solid #333;
     display: block;
 }
 
@@ -138,4 +138,46 @@ footer {
     font-size: 1rem;
     line-height: 1.5;
     margin-bottom: 10px;
+}
+/* Off-Canvas-Menü */
+.off-canvas-menu {
+    position: fixed;
+    top: 0;
+    right: -250px; /* Start außerhalb des Bildschirms */
+    width: 250px;
+    height: 100%;
+    background: #333;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    padding-top: 60px;
+}
+
+.off-canvas-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.off-canvas-menu li {
+    margin: 20px 0;
+}
+
+.off-canvas-menu a {
+    color: #fff;
+    font-size: 1.2rem;
+    text-decoration: none;
+    display: block;
+    padding: 10px 0;
+    transition: color 0.3s;
+}
+
+.off-canvas-menu a:hover {
+    color: #858585;
+}
+
+/* Wenn die Maus den Rand berührt */
+.off-canvas-menu:hover {
+    right: 0; /* Menü reinfahren */
 }
