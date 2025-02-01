@@ -1,0 +1,194 @@
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #111;
+            margin: 0;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+            animation: backgroundWave 20s ease-in-out infinite;
+        }
+
+        h1 {
+            font-size: 5rem;
+            font-family: 'Pacifico', cursive;
+            margin: 0;
+            color: transparent;
+            background: linear-gradient(90deg, #ff7e5f, #feb47b, #6a11cb, #2575fc);
+            background-size: 400% 400%;
+            background-clip: text;
+            animation: gradientAnimation 10s linear infinite;
+            position: relative;
+            top: -100px;
+            white-space: nowrap;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes backgroundWave {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        /* Der Kerzenbereich */
+        .candle {
+            position: relative;
+            width: 50px;
+            height: 120px;
+            background: linear-gradient(to bottom, #ffcc88, #bb7733);
+            border-radius: 10px;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+            animation: smoothWave 10s ease-in-out infinite;
+        }
+
+        .flame {
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            width: 20px;
+            height: 40px;
+            background: radial-gradient(circle, #ffdd55, #ff8800, transparent);
+            border-radius: 50% 50% 40% 40%;
+            transform: translateX(-50%);
+            animation: flicker 0.4s infinite alternate ease-in-out;
+        }
+
+        @keyframes flicker {
+            0% {
+                transform: translateX(-50%) scaleY(1);
+                opacity: 0.9;
+            }
+            100% {
+                transform: translateX(-50%) scaleY(1.1);
+                opacity: 1;
+            }
+        }
+
+        .melt {
+            position: absolute;
+            bottom: -5px;
+            width: 50px;
+            height: 20px;
+            background: linear-gradient(to bottom, #bb7733, #772200);
+            border-radius: 50%;
+            filter: blur(5px);
+        }
+
+        @keyframes smoothWave {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(10px);
+            }
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(255, 140, 0, 0.6);
+            animation: particleAnimation 15s infinite;
+            opacity: 0;
+            box-shadow: 0 0 10px rgba(255, 140, 0, 0.8); 
+        }
+
+        @keyframes particleAnimation {
+            0% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+            25% {
+                transform: translate(-5px, 5px);
+            }
+            50% {
+                transform: translate(0, -5px);
+                opacity: 0.8;
+            }
+            75% {
+                transform: translate(5px, 5px);
+            }
+            100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        .particle1 {
+            width: 6px;
+            height: 6px;
+            top: 10%;
+            left: 5%;
+            animation-duration: 20s;
+        }
+
+        .particle2 {
+            width: 8px;
+            height: 8px;
+            top: 20%;
+            left: 15%;
+            animation-duration: 22s;
+        }
+
+        .particle3 {
+            width: 7px;
+            height: 7px;
+            top: 30%;
+            left: 40%;
+            animation-duration: 18s;
+        }
+
+        .particle4 {
+            width: 10px;
+            height: 10px;
+            top: 50%;
+            left: 60%;
+            animation-duration: 25s;
+        }
+
+        .particle5 {
+            width: 5px;
+            height: 5px;
+            top: 70%;
+            left: 75%;
+            animation-duration: 30s;
+        }
+
+        .particle6 {
+            width: 8px;
+            height: 8px;
+            top: 85%;
+            left: 25%;
+            animation-duration: 24s;
+        }
+
+        .particle7 {
+            width: 7px;
+            height: 7px;
+            top: 60%;
+            left: 85%;
+            animation-duration: 28s;
+        }
+
+        .particle8 {
+            width: 6px;
+            height: 6px;
+            top: 15%;
+            left: 80%;
+            animation-duration: 26s;
+        }

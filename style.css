@@ -13,6 +13,23 @@ body {
     overflow-x: hidden;
 }
 
+body.menu-open {
+    overflow: hidden; /* Verhindert Scrollen */
+}
+
+body.menu-open .off-canvas-menu {
+    right: 0;
+}
+
+.content {
+    transition: margin-right 0.4s ease; 
+}
+
+body.menu-open .content {
+    margin-right: 250px;
+}
+
+
 a {
     text-decoration: none;
     color: #fff;
@@ -58,6 +75,7 @@ a {
 
 .section.dark {
     background: #222;
+    z-index: 10;
 }
 
 .skills-grid,
@@ -94,6 +112,7 @@ footer {
 /* Visitenkarten-Sektion */
 .card {
     display: flex;
+    
     justify-content: space-between;
     align-items: center;
     background: #333;
@@ -143,21 +162,39 @@ footer {
 .off-canvas-menu {
     position: fixed;
     top: 0;
-    right: -250px; /* Start außerhalb des Bildschirms */
+    right: -250px; /* Menü startet außerhalb des Bildschirms */
     width: 250px;
-    height: 100%;
-    background: #292828;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
-    transition: right 0.3s ease;
+    height: 100vh;
+    background: #333;
+    transition: right 0.3s ease-in-out;
+    padding-top: 20px;
+    text-align: center;
     z-index: 1000;
-    padding-top: 60px;
 }
 
+/* Überschrift vom Menü */
+.menu-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+
+.menu-open .main-wrapper {
+    transform: translateX(-250px);
+}
+
+.menu-open .off-canvas-menu {
+    right: 0;
+}
+
+/* Links im Menü */
 .off-canvas-menu ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    text-align: center;
+    z-index: 1000;
 }
 
 .off-canvas-menu li {
@@ -177,7 +214,67 @@ footer {
     color: #858585;
 }
 
-/* Wenn die Maus den Rand berührt */
-.off-canvas-menu:hover {
-    right: 0; /* Menü reinfahren */
+.main-wrapper {
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    flex-wrap: wrap;
 }
+
+.link {
+    color: #fff;
+    text-align: center;
+    flex-wrap: wrap;
+    transition: text-decoration 1s ease, color 0.3s ease;
+}
+
+.link:hover {
+    text-decoration: underline; 
+    color: #858585;
+}
+
+main {
+    transition: transform 0.3s ease;
+}
+
+.CANDLE {
+    color: rgb(29, 29, 29);
+    transition: text-decoration 1s ease, color 0.3s ease;
+}
+
+@keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .CANDLE:hover {
+    font-size: 15px; /* Textgröße */
+    font-weight: bold;
+    background: linear-gradient(45deg, #fcd703, #fcba03, #f27005);
+    background-size: 400% 400%;
+    color: transparent;
+    background-clip: text;
+    animation: gradientAnimation 5s ease infinite, glow 2s ease-in-out infinite;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  
+  @keyframes glow {
+    0% {
+      text-shadow: 0 0 3px  #fc73038f, 0 0 5px  #fc730388, 0 0 7px #fc670380, 0 0 10px #f2b30585;
+    }
+    50% {
+      text-shadow: 0 0 6px  #fc730380, 0 0 8px  #fc670386, 0 0 10px #f2b3057a, 0 0 15px #f2b30586;
+    }
+    100% {
+      text-shadow: 0 0 3px  #fc730371, 0 0 5px   #fc73037a, 0 0 7px #fc670375, 0 0 10px #f2b30585;
+    }
+  }
+
+  
