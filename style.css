@@ -146,7 +146,7 @@ footer {
     right: -250px; /* Start außerhalb des Bildschirms */
     width: 250px;
     height: 100%;
-    background: #333;
+    background: #292828;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
     transition: right 0.3s ease;
     z-index: 1000;
